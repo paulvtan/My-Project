@@ -5,11 +5,19 @@ var pagecontainer = $("#page-container")[0];
 var imgSelector = $("#my-file-selector")[0];
 var refreshbtn = $("#refreshbtn")[0]; //You dont have to use [0], however this just means whenever you use the object you need to refer to it with [0].
 function summonerLookUp() {
-    sweetAlert("Oops...", "Something went wrong!", "error");
+    $(".fakeloader").fakeLoader();
     var summonerName = "";
     summonerName = document.getElementById("userName").value;
     var apiKey = "RGAPI-EDDF1ED9-48D5-4B23-B33B-CEF488949806";
-    //$(".fakeloader").fakeLoader();
+    if (summonerName == "") {
+        swal({
+            title: "Error",
+            text: "Please input a summoner name.",
+            type: "warning",
+            allowOutsideClick: true,
+            allowEscapeKey: true,
+        });
+    }
     if (summonerName !== "") {
         //ajax API call to riot
         $.ajax({
@@ -20,13 +28,24 @@ function summonerLookUp() {
             success: function (json) {
                 var summonerNameNoSpace = summonerName.replace(" ", "");
                 summonerNameNoSpace = summonerNameNoSpace.toLowerCase().trim();
+                var name = json[summonerNameNoSpace].name;
                 var summonerLevel = json[summonerNameNoSpace].summonerLevel;
                 var profileIcon = json[summonerNameNoSpace].profileIconId;
-                var message = "Summoner Name: " + summonerName + "\nSummoner Level: " + summonerLevel + "\nProfile Icon: " + profileIcon;
-                alert(message);
+                swal({
+                    title: name,
+                    text: "Summoner Level: " + summonerLevel,
+                    imageUrl: "http://ddragon.leagueoflegends.com/cdn/6.18.1/img/profileicon/" + profileIcon + ".png" });
             },
             error: function (XMLHttpRequest, textStatus, errorThrown) {
-                alert("error getting Summoner data!");
+                swal({
+                    title: "User not found!",
+                    text: "The following summoner " + summonerName + " does not exist.",
+                    type: "error",
+                    confirmButtonText: "Search another summoner",
+                    confirmButtonColor: "#DD6B55",
+                    allowOutsideClick: true,
+                    allowEscapeKey: true,
+                });
             }
         });
     }

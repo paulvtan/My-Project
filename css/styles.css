@@ -41,3 +41,12 @@ h2#page-header {
     padding-bottom:20px;
     color: white;
 }
+
+
+/* Footer */
+
+	#footer {
+		text-align: center;
+		padding: 10em 0 10em 0;
+        color: white
+	}

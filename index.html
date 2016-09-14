@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
         <head>
-            <title>Summon Me League Look Up.</title>
+            <title>Summoner Sneaked.</title>
+            <link rel="stylesheet" href="./css/fakeLoader.css">
             <!--Boostrap's CSS-->
             <link rel="stylesheet" type="text/css" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
             <!--Sweetalert's CSS-->
@@ -10,13 +11,15 @@
             <link rel="stylesheet" href="./css/styles.css">
         </head>
         <body>
+                <div id="fakeLoader"></div>
                 <!-- Header -->
                 <header id="header">
-                    <span class="avatar"><img src="images/icon.png" alt="" /></span>
-                    <h2 id="page-header"> Welcome Summoner! Please input your name below. </h2>
-                    <br />
-                    <input id="userName"/>
-                    <input type="submit" onclick="summonerLookUp();"/>
+                <span class="avatar"><img src="images/icon.png" alt="" /></span>
+                <h2 id="page-header"> Welcome Summoner! Please input your name below. </h2>
+                <br />
+                <input id="userName"/>
+                <input type="submit" onclick="summonerLookUp();" value="peep!"/>
+
 
             <!--Script references -->
             <script src="./node_modules/jquery/dist/jquery.min.js"></script>
@@ -26,5 +29,26 @@
             <script src="./sweetalert/dist/sweetalert.min.js"></script>
             <!--Custom Script-->
             <script src="./js/summoner.js"></script>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+            <script src="./js/fakeLoader.min.js"></script>
+<script type="text/javascript">
+
+
+    $("#fakeLoader").fakeLoader({
+    
+            timeToHide:1200, //Time in milliseconds for fakeLoader disappear
+            zIndex:999, // Default zIndex
+            spinner:"spinner1",//Options: 'spinner1', 'spinner2', 'spinner3', 'spinner4', 'spinner5', 'spinner6', 'spinner7' 
+            bgColor:"#2ecc71", //Hex, RGB or RGBA colors
+            
+    });
+     </script>
+
+     	<!-- Footer -->
+		<footer id="footer">
+				<p>Created by Paul T. for Microsoft Student Accelerator 2016.</p>
+		</footer>
+
+
         </body>
 </html>    
