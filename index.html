@@ -1,10 +1,30 @@
 <!DOCTYPE html>
 <html>
         <head>
-            <title>My Project Created by Paul</title>
+            <title>Summon Me League Look Up.</title>
+            <!--Boostrap's CSS-->
+            <link rel="stylesheet" type="text/css" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+            <!--Sweetalert's CSS-->
+            <link rel="stylesheet" type="text/css" href="./node_modules/sweetalert/dist/sweetalert.css">
+            <!--Custom CSS-->
             <link rel="stylesheet" href="./css/styles.css">
         </head>
         <body>
-            
+                <!-- Header -->
+                <header id="header">
+                    <span class="avatar"><img src="images/icon.png" alt="" /></span>
+                    <h2 id="page-header"> Welcome Summoner! Please input your name below. </h2>
+                    <br />
+                    <input id="userName"/>
+                    <input type="submit" onclick="summonerLookUp();"/>
+
+            <!--Script references -->
+            <script src="./node_modules/jquery/dist/jquery.min.js"></script>
+            <!--Bootstrap Script-->
+            <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+            <!--Sweetalert-->
+            <script src="./node_modules/sweetalert/dist/sweetalert.min.js"></script>
+            <!--Custom Script-->
+            <script src="./js/summoner.js"></script>
         </body>
 </html>    

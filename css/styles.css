@@ -7,3 +7,37 @@ body {
 		background-size: cover;
 		background-position: top center;
 }
+
+
+/* Header */
+
+#header {
+	text-align: center;
+	padding: 6em 0 4em 0;
+}
+
+
+#header .avatar {
+	border-radius: 100%;
+	display: inline-block;
+	margin: 0 0 2em 0;
+	padding: 0.5em;
+	border: solid 1px rgba(255, 255, 255, 0.25);
+	background-color: rgba(255, 255, 255, 0.075);
+}
+
+#header .avatar img {
+	border-radius: 100%;
+	display: block;
+	width: 10em;
+}
+
+/*#header h1 {
+	color: rgba(255, 255, 255, 0.65);
+}*/
+
+h2#page-header {
+    padding-top:20px;
+    padding-bottom:20px;
+    color: white;
+}
