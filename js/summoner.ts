@@ -11,7 +11,7 @@ var refreshbtn = $("#refreshbtn")[0]; //You dont have to use [0], however this j
 
 
 function summonerLookUp() {
-    sweetAlert('Congratulations!', 'Your message has been successfully sent', 'success');
+    sweetAlert("Oops...", "Something went wrong!", "error");
 
     
 

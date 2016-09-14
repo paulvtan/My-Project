@@ -5,7 +5,7 @@ var pagecontainer = $("#page-container")[0];
 var imgSelector = $("#my-file-selector")[0];
 var refreshbtn = $("#refreshbtn")[0]; //You dont have to use [0], however this just means whenever you use the object you need to refer to it with [0].
 function summonerLookUp() {
-    sweetAlert('Congratulations!', 'Your message has been successfully sent', 'success');
+    sweetAlert("Oops...", "Something went wrong!", "error");
     var summonerName = "";
     summonerName = document.getElementById("userName").value;
     var apiKey = "RGAPI-EDDF1ED9-48D5-4B23-B33B-CEF488949806";
