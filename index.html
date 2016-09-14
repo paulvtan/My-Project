@@ -36,12 +36,13 @@
 
 
 <script type="text/javascript">
-    $("#fakeLoader").fakeLoader({
+    $(document).ready(function(){
+        $("#fakeLoader").fakeLoader({
             timeToHide:2500, //Time in milliseconds for fakeLoader disappear
             zIndex:999, // Default zIndex
             spinner:"spinner4",//Options: 'spinner1', 'spinner2', 'spinner3', 'spinner4', 'spinner5', 'spinner6', 'spinner7' 
-            bgColor:"#7A1885", //Hex, RGB or RGBA colors
-            
+            bgColor:"#7A1885", //Hex, RGB or RGBA colors      
+        });
     });
 </script>
 
