@@ -2,6 +2,7 @@
 <html>
         <head>
             <title>Summoner Sneaked.</title>
+            <link rel="icon" href="./images/icon.png">
             <link rel="stylesheet" href="./css/fakeLoader.css">
             <!--Boostrap's CSS-->
             <link rel="stylesheet" type="text/css" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
@@ -11,11 +12,12 @@
             <link rel="stylesheet" href="./css/styles.css">
         </head>
         <body>
+                <div class="flbackdrop"></div>
                 <div id="fakeLoader"></div>
                 <!-- Header -->
                 <header id="header">
                 <span class="avatar"><img src="images/icon.png" alt="" /></span>
-                <h2 id="page-header"> Welcome Summoner! Please input your name below. </h2>
+                <h2 id="page-header"> Welcome to Summoner Sneaked! Please input a summoner name below. </h2>
                 <br />
                 <input id="userName"/>
                 <input type="submit" onclick="summonerLookUp();" value="peep!"/>
@@ -31,18 +33,19 @@
             <script src="./js/summoner.js"></script>
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
             <script src="./js/fakeLoader.min.js"></script>
+
+
 <script type="text/javascript">
-
-
     $("#fakeLoader").fakeLoader({
-    
-            timeToHide:1200, //Time in milliseconds for fakeLoader disappear
+            timeToHide:2500, //Time in milliseconds for fakeLoader disappear
             zIndex:999, // Default zIndex
-            spinner:"spinner1",//Options: 'spinner1', 'spinner2', 'spinner3', 'spinner4', 'spinner5', 'spinner6', 'spinner7' 
-            bgColor:"#2ecc71", //Hex, RGB or RGBA colors
+            spinner:"spinner4",//Options: 'spinner1', 'spinner2', 'spinner3', 'spinner4', 'spinner5', 'spinner6', 'spinner7' 
+            bgColor:"#7A1885", //Hex, RGB or RGBA colors
             
     });
-     </script>
+</script>
+
+     <script type="text/javascript">$(".flbackdrop").remove();</script>
 
      	<!-- Footer -->
 		<footer id="footer">

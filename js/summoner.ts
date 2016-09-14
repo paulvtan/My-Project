@@ -12,7 +12,6 @@ var refreshbtn = $("#refreshbtn")[0]; //You dont have to use [0], however this j
 
 function summonerLookUp() {
 
-    $(".fakeloader").fakeLoader();
     var summonerName = "";
     summonerName = (<HTMLInputElement>document.getElementById("userName")).value;
 
@@ -51,7 +50,10 @@ function summonerLookUp() {
                 swal({   
                     title: name,   
                     text: "Summoner Level: " + summonerLevel,   
-                    imageUrl: "http://ddragon.leagueoflegends.com/cdn/6.18.1/img/profileicon/" + profileIcon + ".png" });
+                    imageUrl: "http://ddragon.leagueoflegends.com/cdn/6.18.1/img/profileicon/" + profileIcon + ".png", 
+                    allowOutsideClick: true,
+                    allowEscapeKey: true
+            });
                                 
             },
             error: function(XMLHttpRequest, textStatus, errorThrown) {

@@ -5,7 +5,6 @@ var pagecontainer = $("#page-container")[0];
 var imgSelector = $("#my-file-selector")[0];
 var refreshbtn = $("#refreshbtn")[0]; //You dont have to use [0], however this just means whenever you use the object you need to refer to it with [0].
 function summonerLookUp() {
-    $(".fakeloader").fakeLoader();
     var summonerName = "";
     summonerName = document.getElementById("userName").value;
     var apiKey = "RGAPI-EDDF1ED9-48D5-4B23-B33B-CEF488949806";
@@ -34,7 +33,10 @@ function summonerLookUp() {
                 swal({
                     title: name,
                     text: "Summoner Level: " + summonerLevel,
-                    imageUrl: "http://ddragon.leagueoflegends.com/cdn/6.18.1/img/profileicon/" + profileIcon + ".png" });
+                    imageUrl: "http://ddragon.leagueoflegends.com/cdn/6.18.1/img/profileicon/" + profileIcon + ".png",
+                    allowOutsideClick: true,
+                    allowEscapeKey: true
+                });
             },
             error: function (XMLHttpRequest, textStatus, errorThrown) {
                 swal({

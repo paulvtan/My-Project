@@ -50,3 +50,13 @@ h2#page-header {
 		padding: 10em 0 10em 0;
         color: white
 	}
+
+.flbackdrop {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: white;
+  z-index: 99999; /*Making sure its on top*/
+  position:absolute
+}

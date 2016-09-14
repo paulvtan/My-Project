@@ -81,9 +81,11 @@
 
                 if (settings.imagePath !='') {
                     el.html('<div class="fl"><img src="'+settings.imagePath+'"></div>');
-                }
+                } 
                 centerLoader();
-        });
+        }
+        
+        );
 
         //Time to hide fakeLoader
         setTimeout(function(){
