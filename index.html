@@ -20,7 +20,7 @@
                 <h2 id="page-header"> Welcome to Summoner Sneaked! Please input a summoner name below. </h2>
                 <br />
                 <input id="userName"/>
-                <input type="submit" onclick="summonerLookUp();" value="peep!"/>
+                <input id="button" type="submit" onclick="summonerLookUp()" value="peep!"/>
 
 
             <!--Script references -->
@@ -48,9 +48,19 @@
 
      <script type="text/javascript">$(".flbackdrop").remove();</script>
 
+<script>
+function enter_detector(e) {
+// if enter key is pressed lose focus
+if(e.which==13||e.keyCode==13){
+	this.blur();
+    }
+}
+document.getElementById('userName').addEventListener('keyup',enter_detector,false);
+</script>
+
      	<!-- Footer -->
 		<footer id="footer">
-				<p>Created by Paul T. for Microsoft Student Accelerator 2016.</p>
+				<p>Created by Paul T. 2016. Version 0.2</p>
 		</footer>
 
 

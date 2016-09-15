@@ -11,10 +11,10 @@ function summonerLookUp() {
     if (summonerName == "") {
         swal({
             title: "Error",
-            text: "Please input a summoner name.",
+            text: "Please input a valid summoner name...",
             type: "warning",
-            allowOutsideClick: true,
-            allowEscapeKey: true,
+            timer: 1700,
+            showConfirmButton: false
         });
     }
     if (summonerName !== "") {
@@ -26,30 +26,40 @@ function summonerLookUp() {
             data: {},
             success: function (json) {
                 var summonerNameNoSpace = summonerName.replace(" ", "");
-                summonerNameNoSpace = summonerNameNoSpace.toLowerCase().trim();
+                summonerNameNoSpace = summonerNameNoSpace.trim();
+                summonerNameNoSpace = summonerNameNoSpace.toLowerCase();
+                document.getElementById("userName").select();
                 var name = json[summonerNameNoSpace].name;
                 var summonerLevel = json[summonerNameNoSpace].summonerLevel;
                 var profileIcon = json[summonerNameNoSpace].profileIconId;
                 swal({
                     title: name,
                     text: "Summoner Level: " + summonerLevel,
-                    imageUrl: "http://ddragon.leagueoflegends.com/cdn/6.18.1/img/profileicon/" + profileIcon + ".png",
                     allowOutsideClick: true,
-                    allowEscapeKey: true
+                    allowEscapeKey: true,
+                    imageUrl: "http://ddragon.leagueoflegends.com/cdn/6.18.1/img/profileicon/" + profileIcon + ".png",
+                    closeOnConfirm: false,
+                    showConfirmButton: false,
+                    showCancelButton: true,
+                    cancelButtonText: "Press 'ESC' to continue",
                 });
             },
             error: function (XMLHttpRequest, textStatus, errorThrown) {
+                document.getElementById("userName").select();
                 swal({
-                    title: "User not found!",
-                    text: "The following summoner " + summonerName + " does not exist.",
+                    title: "Player not found.",
                     type: "error",
-                    confirmButtonText: "Search another summoner",
-                    confirmButtonColor: "#DD6B55",
-                    allowOutsideClick: true,
-                    allowEscapeKey: true,
+                    text: "Please try another summoner name...",
+                    timer: 1700,
+                    showConfirmButton: false,
                 });
             }
         });
     }
     else { }
 }
+$("#userName").keyup(function (event) {
+    if (event.keyCode == 13) {
+        $("#button").click();
+    }
+});

@@ -8,26 +8,26 @@ var imgSelector : HTMLInputElement = <HTMLInputElement> $("#my-file-selector")[0
 var refreshbtn = $("#refreshbtn")[0]; //You dont have to use [0], however this just means whenever you use the object you need to refer to it with [0].
 
 
-
-
 function summonerLookUp() {
 
     var summonerName = "";
     summonerName = (<HTMLInputElement>document.getElementById("userName")).value;
-
     var apiKey = "RGAPI-EDDF1ED9-48D5-4B23-B33B-CEF488949806";
     
+
     if (summonerName == "") {
         swal({   
             title: "Error",   
-            text: "Please input a summoner name.", 
+            text: "Please input a valid summoner name...", 
             type: "warning",
-            allowOutsideClick: true,
-            allowEscapeKey: true,
+            timer: 1700,
+            showConfirmButton: false
            });
     }
 
-    if (summonerName !== "") {       
+    if (summonerName !== "") {
+
+        
  //ajax API call to riot
         $.ajax({
             url: 'https://na.api.pvp.net/api/lol/oce/v1.4/summoner/by-name/' + summonerName + '?api_key=' + apiKey,
@@ -37,36 +37,46 @@ function summonerLookUp() {
 
             },
             success: function (json) {
-                var summonerNameNoSpace = summonerName.replace(" ", "");
 
-                summonerNameNoSpace = summonerNameNoSpace.toLowerCase().trim();
-                
+                var summonerNameNoSpace = summonerName.replace(" ", "");
+                summonerNameNoSpace = summonerNameNoSpace.trim();
+                summonerNameNoSpace = summonerNameNoSpace.toLowerCase(); 
+                (<HTMLInputElement>document.getElementById("userName")).select();
                 var name = json[summonerNameNoSpace].name;
                 var summonerLevel = json[summonerNameNoSpace].summonerLevel;
                 var profileIcon = json[summonerNameNoSpace].profileIconId;
-
-            
-
+                
                 swal({   
                     title: name,   
                     text: "Summoner Level: " + summonerLevel,   
-                    imageUrl: "http://ddragon.leagueoflegends.com/cdn/6.18.1/img/profileicon/" + profileIcon + ".png", 
-                    allowOutsideClick: true,
-                    allowEscapeKey: true
-            });
-                                
-            },
-            error: function(XMLHttpRequest, textStatus, errorThrown) {
-                swal({   
-                    title: "User not found!",   
-                    text: "The following summoner " + summonerName + " does not exist.",
-                    type: "error",
-                    confirmButtonText: "Search another summoner",
-                    confirmButtonColor: "#DD6B55",
                     allowOutsideClick: true,
                     allowEscapeKey: true,
-                    });
+                    imageUrl: "http://ddragon.leagueoflegends.com/cdn/6.18.1/img/profileicon/" + profileIcon + ".png",
+                    closeOnConfirm: false,
+                    showConfirmButton: false,
+                    showCancelButton: true,
+                    cancelButtonText: "Press 'ESC' to continue",
+                    }
+                    );                   
+                },
+            error: function(XMLHttpRequest, textStatus, errorThrown) {
+                (<HTMLInputElement>document.getElementById("userName")).select();
+                swal({   
+                    title: "Player not found.",  
+                    type: "error", 
+                    text: "Please try another summoner name...",   
+                    timer: 1700, 
+                    showConfirmButton: false,
+                });
+                    
+                    
             }
         });
     } else {}
 }
+
+$("#userName").keyup(function(event){
+    if(event.keyCode == 13){
+        $("#button").click();
+    }
+});
