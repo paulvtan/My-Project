@@ -1,6 +1,7 @@
 # Summoner Sneaked
-##Responsive Web Application for quickly scouting summoner detail in League of Legend. 
+##Responsive Web Application for quickly scouting summoner detail in League of Legend.
 
+This is the URL: http://summonersneaked.azurewebsites.net/
 
 
 **Version 0.2 Update 15/09/2016**
