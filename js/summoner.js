@@ -20,7 +20,7 @@ function summonerLookUp() {
     if (summonerName !== "") {
         //ajax API call to riot
         $.ajax({
-            url: 'https://na.api.pvp.net/api/lol/oce/v1.4/summoner/by-name/' + summonerName + '?api_key=' + apiKey,
+            url: 'https://oce.api.riotgames.com/api/lol/OCE/v1.4/summoner/by-name/lollicakexd?api_key=RGAPI-EDDF1ED9-48D5-4B23-B33B-CEF488949806',
             type: 'GET',
             dataType: 'json',
             data: {},
