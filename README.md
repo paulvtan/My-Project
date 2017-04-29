@@ -10,3 +10,7 @@ This is the URL: http://summonersneaked.azurewebsites.net/
 * Fail cases are now appeared as short duration time window, before the messege disappear.
 * Auto re-highlight the text for quick re-typing.
 * Background change to a much more vibrant and colourful image to fit league theme.
+
+
+**IMPORTANT
+* Due to recent changes to Riot game API, you can no longer make a client side call, therefore this app is currently not responsive. I have tried using CORS to go around this issue, but the server doesn't allow this. A work around is still being figure out.
