@@ -13,4 +13,4 @@ This is the URL: http://summonersneaked.azurewebsites.net/
 
 
 **IMPORTANT**
-* Due to recent changes to Riot game API, you can no longer make a client side call, therefore this app is currently not responsive. I have tried using CORS to go around this issue, but the server doesn't allow this. A work around is still being figure out.
+* Due to recent changes to Riot game API, you can no longer make a client side call, therefore this app is currently not responsive. I have tried using CORS to go around this issue, but the server doesn't allow this. A work around is still being figured out.
